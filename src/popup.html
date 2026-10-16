@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <title>Protect Link</title>
+  <link rel="stylesheet" href="ui.css">
+  <style>
+    body { width: 380px; padding: 12px 14px; }
+    label.switch { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; }
+    ul { list-style: none; margin: 0; padding: 0; max-height: 220px; overflow: auto; }
+    li { padding: 6px 0; border-bottom: 1px solid var(--line); }
+    li:last-child { border-bottom: 0; }
+    .item { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .dest { word-break: break-all; font-family: ui-monospace, Consolas, monospace; font-size: 11px; }
+    .tag { font-size: 11px; padding: 1px 6px; border-radius: 999px; background: var(--soft); white-space: nowrap; }
+    .empty { color: var(--muted); padding: 4px 0; }
+  </style>
+</head>
+<body>
+  <h1>🛡️ Protect Link</h1>
+
+  <label class="switch">เปิดการป้องกัน <input type="checkbox" id="enabled"></label>
+  <label class="switch"><span>เชื่อถือเว็บนี้ <span class="muted" id="site"></span></span> <input type="checkbox" id="trustSite"></label>
+
+  <h2>ที่ถูกบล็อก / ตรวจพบล่าสุด</h2>
+  <ul id="log"></ul>
+  <div class="row"><button id="clearLog">ล้างประวัติ</button></div>
+
+  <h2>โดเมนที่บล็อกถาวร</h2>
+  <ul id="blocked"></ul>
+
+  <h2>เว็บที่เชื่อถือ (ไม่ตรวจ)</h2>
+  <ul id="trusted"></ul>
+
+  <script src="shared.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
